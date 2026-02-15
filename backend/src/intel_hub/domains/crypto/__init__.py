@@ -1,0 +1,1 @@
+"""Crypto domain config package."""

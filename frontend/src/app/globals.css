@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 22% 10%;
+  --foreground: 46 62% 93%;
+  --card: 222 24% 14%;
+  --border: 213 20% 24%;
+  --primary: 43 88% 58%;
+  --accent: 169 70% 44%;
+  --muted: 220 16% 62%;
+  --destructive: 2 76% 57%;
+
+  --radius-xl: 0.9rem;
+  --radius-2xl: 1.05rem;
+  --radius-3xl: 1.3rem;
+  --theme-transition-duration: 220ms;
+  --theme-transition-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  font-family: var(--font-body), "Noto Sans KR", sans-serif;
+  background:
+    radial-gradient(circle at 20% -20%, rgba(234, 179, 8, 0.25), transparent 34%),
+    radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.2), transparent 30%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+}
+
+.theme-transition,
+.theme-transition * {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity;
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-easing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
