@@ -13,6 +13,10 @@ test-results/
 
 # Env
 .env
+.env.*
+!.env.example
+*.pem
+*.key
 
 # OS
 .DS_Store
